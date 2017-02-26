@@ -19,7 +19,7 @@ spec:
         app: server-simple1v1
     spec:
       containers:
-        image: exorath/server-simple1v1:0.0.77
+        image: exorath/server-bc
         imagePullPolicy: IfNotPresent
         name: server-simple1v1
         ports:
