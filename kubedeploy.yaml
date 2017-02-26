@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: server-simple1v1
+    type: bc
+  name: server-simple1v1
+  namespace: servers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-simple1v1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: server-simple1v1
+    spec:
+      containers:
+        image: exorath/server-simple1v1:0.0.77
+        imagePullPolicy: IfNotPresent
+        name: server-simple1v1
+        ports:
+        - containerPort: 25565
+          protocol: TCP
+        stdin: true
+        tty: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 1000
+---
+apiVersion: extensions/v1
+kind: Deployment
+metadata:
+  labels:
+    app: server-simple1v1
+    type: bc
+  name: simple1v1
+  namespace: servers
+spec:
+  selector:
+    app: server-simple1v1
+  ports:
+  - protocol: TCP
+    port: 25565
+    targetPort: 25565
+  type: NodePort
