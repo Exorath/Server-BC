@@ -1,3 +1,5 @@
+FROM openjdk:8-jdk
+
 COPY ./mcserver/. /usr/src/mcserver/
 COPY ./mcserver/startserver /usr/bin/
 WORKDIR /usr/src/mcserver
