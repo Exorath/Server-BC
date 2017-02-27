@@ -6,6 +6,11 @@ handlers:
           env: GITHUB_OAUTH
         name: exorath/ActionAPI
         jar: ActionAPI-(.*).jar
+      BCBasePlugin:
+        oauth:
+          env: GITHUB_OAUTH
+        name: exorath/BCBasePlugin
+        jar: BCBasePlugin-(.*).jar
   amazons3:
     jar:
       bucketName: exospigot
