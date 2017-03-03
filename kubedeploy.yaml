@@ -19,7 +19,7 @@ spec:
         app: server-bc
     spec:
       containers:
-        image: exorath/server-bc
+      - image: exorath/server-bc
         imagePullPolicy: IfNotPresent
         name: server-bc
         ports:
@@ -31,13 +31,13 @@ spec:
       restartPolicy: Always
       terminationGracePeriodSeconds: 1000
 ---
-apiVersion: extensions/v1
+apiVersion: v1
 kind: Service
 metadata:
   labels:
     app: server-bc
     type: bc
-  name: simple1v1
+  name: server-bc
   namespace: servers
 spec:
   selector:
