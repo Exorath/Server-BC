@@ -2,26 +2,26 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: server-simple1v1
+    app: server-bc
     type: bc
-  name: server-simple1v1
+  name: server-bc
   namespace: servers
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: server-simple1v1
+      app: server-bc
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: server-simple1v1
+        app: server-bc
     spec:
       containers:
         image: exorath/server-bc
         imagePullPolicy: IfNotPresent
-        name: server-simple1v1
+        name: server-bc
         ports:
         - containerPort: 25565
           protocol: TCP
@@ -32,16 +32,16 @@ spec:
       terminationGracePeriodSeconds: 1000
 ---
 apiVersion: extensions/v1
-kind: Deployment
+kind: Service
 metadata:
   labels:
-    app: server-simple1v1
+    app: server-bc
     type: bc
   name: simple1v1
   namespace: servers
 spec:
   selector:
-    app: server-simple1v1
+    app: server-bc
   ports:
   - protocol: TCP
     port: 25565
