@@ -1,5 +1,5 @@
 player_limit: -1
-ip_forward: false
+ip_forward: true
 permissions:
   default:
   - bungeecord.command.server
@@ -26,8 +26,6 @@ listeners:
   tab_list: GLOBAL_PING
   query_enabled: false
   host: 0.0.0.0:25565
-  forced_hosts:
-    pvp.md-5.net: pvp
   max_players: 1
   tab_size: 60
   ping_passthrough: false
