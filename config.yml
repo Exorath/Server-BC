@@ -13,6 +13,10 @@ timeout: 30000
 log_commands: false
 online_mode: true
 servers:
+-  lobby:		
+-    motd: '&1Just another BungeeCord - Forced Host'		
+-    address: 10.32.0.97:25566		
+-    restricted: false
 listeners:
 - query_port: 25565
   motd: '&1Another Bungee server'
@@ -22,11 +26,9 @@ listeners:
   tab_list: GLOBAL_PING
   query_enabled: false
   host: 0.0.0.0:25565
-  max_players: 1
+  max_players: 20
   tab_size: 60
   ping_passthrough: false
   force_default_server: false
-disabled_commands:
-- disabledcommandhere
 network_compression_threshold: 256
 connection_throttle: 4000
