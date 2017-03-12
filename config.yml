@@ -13,9 +13,9 @@ timeout: 30000
 log_commands: false
 online_mode: true
 servers:
-- lobby:		
-    motd: '&1Just another BungeeCord - Forced Host'		
-    address: 10.32.0.97:25566		
+- lobby:
+    motd: '&1Just another BungeeCord - Forced Host'
+    address: 10.32.0.97:25566
     restricted: false
 listeners:
 - query_port: 25565
