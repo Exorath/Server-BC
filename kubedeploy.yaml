@@ -25,6 +25,9 @@ spec:
         ports:
         - containerPort: 25565
           protocol: TCP
+        env:
+        - name: ACTIONAPI_SERVICE_ADDRESS
+          value: "{ip:port}"
         stdin: true
         tty: true
       dnsPolicy: ClusterFirst
