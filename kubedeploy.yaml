@@ -28,6 +28,8 @@ spec:
         env:
         - name: ACTIONAPI_SERVICE_ADDRESS
           value: "{ip:port}"
+        - name: CONNECTOR_SERVICE_ADDRESS
+          value: "http://connectorservice:8080"
         stdin: true
         tty: true
       dnsPolicy: ClusterFirst
