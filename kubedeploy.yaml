@@ -19,7 +19,7 @@ spec:
         app: server-bc
     spec:
       containers:
-      - image: exorath/server-bc
+      - image: exorath/server-bc:0.0.39
         imagePullPolicy: IfNotPresent
         name: server-bc
         ports:
@@ -27,7 +27,7 @@ spec:
           protocol: TCP
         env:
         - name: ACTIONAPI_SERVICE_ADDRESS
-          value: "{ip:port}"
+          value: "actionapiservice:8080"
         - name: CONNECTOR_SERVICE_ADDRESS
           value: "http://connectorservice:8080"
         stdin: true
